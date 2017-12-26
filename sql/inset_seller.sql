@@ -1,0 +1,1 @@
+INSERT	INTO sellers (type, name, phone, email, website) VALUES ('seller', 'Darryl Dixon', 8044919523, 'piecedigitalstudios@gmail.com', 'piecedigital.net')

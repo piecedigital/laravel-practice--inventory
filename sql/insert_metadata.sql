@@ -1,0 +1,2 @@
+INSERT INTO metadata (inventory_item_id, weight_value, weight_unit, dimensions_width_value, dimensions_width_unit, dimensions_length_value, dimensions_length_unit, dimensions_height_value, dimensions_height_unit, color)
+  VALUES (#, 1, "lbs", 20, "ft", 30, "ft", 40, "ft", "red")
