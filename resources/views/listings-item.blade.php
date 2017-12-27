@@ -5,5 +5,6 @@
 @section("page-listings", "set")
 
 @section("content")
-  listings item
+  {{$index}}
+  {{ $listing }}
 @endsection

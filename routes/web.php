@@ -15,14 +15,17 @@ Route::redirect('/home', "/", 301);
 
 Route::view('/', 'home');
 
-Route::get('/listings', function (App\Listing $listings) {
+Route::get('/listings', function () {
   return view('listings', [
-    "listings" => $listings->get()
+    "listings" => App\Listing::get()
   ]);
 });
 
-Route::get('/listings/{id}', function () {
-  return view('listings-item');
+Route::get('/listings/{id}', function ($listing) {
+  return view('listings-item', [
+    "index" => $listing,
+    "listing" => App\Listing::where(["inventory.id" => $listing])->joinMissing()->get()->first()
+  ]);
 });
 
 Route::get('/reviews', function () {

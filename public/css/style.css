@@ -2,6 +2,17 @@
   box-sizing: border-box;
 }
 
+ul, li, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.separator {
+  height: 4px;
+  margin: 8px ;
+  background-color: black;
+}
+
 body {
   margin: 0;
 }
@@ -62,4 +73,26 @@ nav .highlighter {
 #listing-search-component .column input,
 #listing-search-component .column select {
   max-width: 100%;
+}
+
+/* listing items */
+#listings-wrapper {
+  padding: 8px;
+}
+#listings-component {
+  max-width: 960px;
+  margin: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 black;
+}
+.listing-item {
+  display: inline-block;
+  width: 25%;
+  padding: 4px;
+}
+.listing-item .content {
+  background: red;
+  border-radius: 4px;
+  box-shadow: 0 0 4px 0 black;
+  word-break: break-all;
 }

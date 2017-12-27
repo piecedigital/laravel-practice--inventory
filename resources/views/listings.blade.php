@@ -6,6 +6,8 @@
 
 @section("content")
   @component('components/listings', ["listings" => $listings])
-
+    @slot('listing_title')
+      See Our Stuff
+    @endslot
   @endcomponent
 @endsection
