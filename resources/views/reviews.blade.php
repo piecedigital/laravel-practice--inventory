@@ -5,5 +5,9 @@
 @section("page-reviews", "set")
 
 @section("content")
-  reviews
+    @component('components/reviews-comp', ["reviews" => $reviews])
+        @slot('reviews_title')
+            See Reviews
+        @endslot
+    @endcomponent
 @endsection

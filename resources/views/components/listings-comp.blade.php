@@ -5,10 +5,8 @@
     <div class="center">
       <ul>
         @foreach ($listings as $key => $value)<li class="listing-item">
-
-            <a href="/listings/{{ $value->id }}" class="content">
-              {{ $value }}
-            </a>
+            @component('components/list-item-comp', ["value" => $value, "media" => $media])
+            @endcomponent
           </li>@endforeach
       </ul>
     </div>

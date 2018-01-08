@@ -5,6 +5,13 @@
 @section("page-listings", "set")
 
 @section("content")
-  {{$index}}
-  {{ $listing }}
+    <div class="wrapper">
+        @component('components/list-item-detailed-comp', ["value" => $listing, "media" => $media])
+        @endcomponent
+        @component('components/send-message-comp', [
+            "type" => "dealer",
+            "listing_item_data" => $listing
+        ])
+        @endcomponent
+    </div>
 @endsection

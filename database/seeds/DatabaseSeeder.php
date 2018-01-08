@@ -104,10 +104,10 @@ class DatabaseSeeder extends Seeder
     for ($ind=1; $ind <= 5; $ind++) {
       DB::table('reviews')->insert([
         'seller_id' => 2,
-        'from' => "Dude Bro" . $ind,
-        'title' => "It's good",
+        'from' => "Mr. Man" . $ind,
+        'title' => "Excellent quality",
         'inventory_item_id' => $ind,
-        'body' => "So, yeah... it's good"
+        'body' => "A well made, high quality item"
       ]);
     }
   }

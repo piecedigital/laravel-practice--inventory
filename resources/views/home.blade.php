@@ -8,7 +8,7 @@
   <div class="content-header">
 
   </div>
-  @component('components/search')
+  @component('components/search-comp')
     @slot('search_title')
       Search Our Stuff
     @endslot
