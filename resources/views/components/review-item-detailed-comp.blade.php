@@ -11,7 +11,7 @@
             <div class="separator-small"></div>
             <div class="from">
                 <span>{{ $review->from }}</span>@if ($inventory_item_data)<span>,
-                    <a href="{{ $inventory_item_data->id }}" class="bold">{{ $inventory_item_data->make . " " . $inventory_item_data->model . ", " . $inventory_item_data->year }}</a>
+                    <a href="/listings/{{ $inventory_item_data->id }}" class="bold">{{ $inventory_item_data->make . " " . $inventory_item_data->model . ", " . $inventory_item_data->year }}</a>
                 </span>@endif
             </div>
         </div>
