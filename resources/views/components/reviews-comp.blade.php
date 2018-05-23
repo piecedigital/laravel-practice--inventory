@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div class="wrapper">
   <div id="reviews-component">
     <h1 class="title">{{ $reviews_title }}</h1>
     <div class="separator"></div>

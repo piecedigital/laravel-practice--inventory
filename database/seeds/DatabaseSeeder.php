@@ -106,7 +106,7 @@ class DatabaseSeeder extends Seeder
         'seller_id' => 2,
         'from' => "Mr. Man" . $ind,
         'title' => "Excellent quality",
-        'inventory_item_id' => $ind,
+        'inventory_item_id' => $ind+5,
         'body' => "A well made, high quality item"
       ]);
     }
