@@ -5,28 +5,96 @@
     <form class="" action="/listings" method="get">
       <div class="row">
         <div class="column">
-          <label for="">seller</label>
-          <input type="text" name="seller" value="">
+          <label for="">seller</label><br>
+          <select class="" name="seller">
+            <option value="">---</option>
+            @foreach ($sellerList as $key => $value)
+              <option {{(Request::get("seller") == $value->id) ? "selected" : ""}}
+                value="{{$value->id}}">{{$value->name}}</option>
+            @endforeach
+          </select>
         </div><div class="column">
-          <label for="">make</label>
-          <input type="text" name="make" value="">
+          <label for="">make</label><br>
+          <select class="" name="make">
+            <option value="">---</option>
+            @foreach ($makeList as $key => $value)
+              <option {{(Request::get("make") == $value) ? "selected" : ""}}
+                value="{{$value}}">{{$value}}</option>
+            @endforeach
+          </select>
         </div><div class="column">
-          <label for="">model</label>
-          <input type="text" name="model" value="">
+          <label for="">model</label><br>
+          <select class="" name="model">
+            <option value="">---</option>
+            @foreach ($modelList as $key => $value)
+              <option {{(Request::get("model") == $value) ? "selected" : ""}}
+                value="{{$value}}">{{$value}}</option>
+            @endforeach
+          </select>
         </div>
       </div>
       <div class="row">
         <div class="column">
-          <label for="">price</label>
-          <select class="" name="price">
-            <option value=""></option>
+          <label for="">price <span id="price-range"></span></label><br>
+          <div class="labeled-select">
+            <label for="">Min</label>
+            <select class="" name="minprice">
+              <option value="">---</option>
+              @for ($i = 0; $i <= 20; $i++)
+                @php
+                  $val = ($maxPrice / 20) * $i;
+                @endphp
+                <option {{(Request::get("minprice") === strval($val)) ? "selected" : ""}}
+                  value="{{$val}}">{{$val}}</option>
+              @endfor
+            </select><br>
+            <label for="">Max</label>
+            <select class="" name="maxprice">
+              <option value="">---</option>
+              @for ($i = 0; $i <= 20; $i++)
+                @php
+                  $val = ($maxPrice / 20) * $i
+                @endphp
+                <option {{(Request::get("maxprice") === strval($val)) ? "selected" : ""}}
+                  value="{{$val}}">{{$val}}</option>
+              @endfor
+            </select>
+          </div>
+        </div><div class="column">
+          <label for="">weight <span id="weight-range"></span></label><br>
+          <div class="labeled-select">
+            <label for="">Min</label>
+            <select class="" name="minwight">
+              <option value="">---</option>
+              @for ($i = 0; $i <= 20; $i++)
+                @php
+                  $val = ($maxWeight / 20) * $i
+                @endphp
+                <option {{(Request::get("minweight") === strval($val)) ? "selected" : ""}}
+                  value="{{$val}}">{{$val}}</option>
+              @endfor
+            </select><br>
+            <label for="">Max</label>
+            <select class="" name="maxwight">
+              <option value="">---</option>
+              @for ($i = 0; $i <= 20; $i++)
+                @php
+                  $val = ($maxWeight / 20) * $i
+                @endphp
+                <option {{(Request::get("maxweight") === strval($val)) ? "selected" : ""}}
+                  value="{{$val}}">{{$val}}</option>
+              @endfor
+            </select>
+          </div>
+        </div><div class="column">
+          <label for="">year</label><br>
+          <select class="" name="year">
+            <option value="">---</option>
+            @foreach ($yearList as $key => $value)
+              <option {{(Request::get("year") == $value) ? "selected" : ""}}
+                value="{{$value}}">{{$value}}</option>
+            @endforeach
           </select>
-        </div><div class="column">
-          <label for="">weight</label>
-          <input type="text" name="weight" value="">
-        </div><div class="column">
-          <label for="">year</label>
-          <input type="text" name="year" value="">
         </div>
       </div>
       <div class="row">

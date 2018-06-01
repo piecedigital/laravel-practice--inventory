@@ -86,7 +86,9 @@ nav .highlighter {
 }
 
 #listing-search-component .row {
-
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
 }
 #listing-search-component .column {
     display: inline-block;
