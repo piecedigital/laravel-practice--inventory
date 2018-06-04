@@ -49,11 +49,24 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
     $errMsg["mb"] = "Must contain 30+ characters";
   }
 
+  $noErrors = !(count($errMsg) > 0);
+
+  if($noErrors) {
+    App\Message::insert([
+      'inventory_item_id' => $ii,
+      'first_name' => $fn,
+      'last_name' => $ln,
+      'email' => $e,
+      'message_body' => $mb,
+    ]);
+  }
+
   return view('listings-item', [
       "index" => $listing_id,
       "listing" => App\Listing::where(["inventory.id" => $listing_id])->joinMissing()->get()->first(),
       "media" => App\Media::where(["inventory_item_id" => $listing_id])->get(),
       "errors" => $errMsg,
+      "success" => $noErrors
       // "reviews" => App\Review::where(["inventory_item_id" => $listing_id])->first()
   ]);
 };
