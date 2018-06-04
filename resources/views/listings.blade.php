@@ -17,7 +17,6 @@
     ])
       @slot('search_title')
           Filter Listings
-          {{-- {{json_encode($sellerList)}} --}}
       @endslot
     @endcomponent
     @component('components/listings-comp', ["listings" => $listings, "media" => $media = []])

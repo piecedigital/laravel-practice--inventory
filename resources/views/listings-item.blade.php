@@ -10,7 +10,8 @@
         @endcomponent
         @component('components/send-message-comp', [
             "type" => "dealer",
-            "listing_item_data" => $listing
+            "listing_item_data" => $listing,
+            "errors" => $errors
         ])
         @endcomponent
     </div>

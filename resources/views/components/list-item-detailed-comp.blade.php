@@ -1,4 +1,4 @@
-<div id="list-item-detailed-component">
+<div id="list-item-detailed-component" class="component-defaults page-wrap center-content-margin">
     <h1 class="title">
         {{ $value->make . " " . $value->model . ", " . $value->year }}
     </h1>

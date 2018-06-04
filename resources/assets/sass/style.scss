@@ -71,6 +71,23 @@ nav .highlighter {
   max-width: 960px;
 }
 
+.center-content-margin {
+  margin: auto;
+}
+
+.center-content-text {
+  text-align: center;
+}
+
+.page-wrap {
+  max-width: 960px;
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+
 /* search box */
 #search-wrapper {
     padding: 16px;
@@ -115,11 +132,11 @@ nav .highlighter {
     width: 25%;
     padding: 4px;
 }
-#list-item-component, #list-item-detailed-component, #review-item-component, #review-item-detailed-component {
+.component-defaults {
     &#list-item-detailed-component, &#review-item-detailed-component {
         display: block;
-        max-width: 960px;
-        margin: auto;
+        // max-width: 960px;
+        // margin: auto;
     }
     display: inline-block;
     border-radius: 4px;

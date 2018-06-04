@@ -1,5 +1,5 @@
-<div id="listings-wrapper">
-  <div id="listings-component">
+<div id="listings-wrapper" class="page-wrap center-content-margin">
+  <div id="listings-component" class="component-defaults">
     <h1 class="title">{{ $listing_title }}</h1>
     <div class="separator"></div>
     <div class="center">

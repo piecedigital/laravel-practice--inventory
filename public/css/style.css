@@ -58,6 +58,19 @@ nav .highlighter {
 .page-wrap {
   max-width: 960px; }
 
+.center-content-margin {
+  margin: auto; }
+
+.center-content-text {
+  text-align: center; }
+
+.page-wrap {
+  max-width: 960px; }
+
+.error-message {
+  font-size: 12px;
+  color: red; }
+
 /* search box */
 #search-wrapper {
   padding: 16px; }
@@ -97,42 +110,40 @@ nav .highlighter {
   width: 25%;
   padding: 4px; }
 
-#list-item-component, #list-item-detailed-component, #review-item-component, #review-item-detailed-component {
+.component-defaults {
   display: inline-block;
   border-radius: 4px;
   box-shadow: 0 0 2px 1px black;
   word-break: break-all;
   color: black; }
-  #list-item-component#list-item-detailed-component, #list-item-component#review-item-detailed-component, #list-item-detailed-component#list-item-detailed-component, #list-item-detailed-component#review-item-detailed-component, #review-item-component#list-item-detailed-component, #review-item-component#review-item-detailed-component, #review-item-detailed-component#list-item-detailed-component, #review-item-detailed-component#review-item-detailed-component {
-    display: block;
-    max-width: 960px;
-    margin: auto; }
-  #list-item-component .content, #list-item-detailed-component .content, #review-item-component .content, #review-item-detailed-component .content {
+  .component-defaults#list-item-detailed-component, .component-defaults#review-item-detailed-component {
+    display: block; }
+  .component-defaults .content {
     display: inline-block;
     width: 100%;
     text-decoration: none;
     color: black; }
-    #list-item-component .content:hover, #list-item-detailed-component .content:hover, #review-item-component .content:hover, #review-item-detailed-component .content:hover {
+    .component-defaults .content:hover {
       background-color: #ebebeb; }
-      #list-item-component .content:hover img, #list-item-detailed-component .content:hover img, #review-item-component .content:hover img, #review-item-detailed-component .content:hover img {
+      .component-defaults .content:hover img {
         opacity: .8; }
-  #list-item-component .title, #list-item-detailed-component .title, #review-item-component .title, #review-item-detailed-component .title {
+  .component-defaults .title {
     padding: 0 4px;
     font-family: "Impact"; }
-  #list-item-component .center, #list-item-detailed-component .center, #review-item-component .center, #review-item-detailed-component .center {
+  .component-defaults .center {
     padding: 4px; }
-    #list-item-component .center .media .single img, #list-item-detailed-component .center .media .single img, #review-item-component .center .media .single img, #review-item-detailed-component .center .media .single img {
+    .component-defaults .center .media .single img {
       width: 100%; }
-    #list-item-component .center .media .gallery li, #list-item-detailed-component .center .media .gallery li, #review-item-component .center .media .gallery li, #review-item-detailed-component .center .media .gallery li {
+    .component-defaults .center .media .gallery li {
       max-width: 100px;
       max-height: 100px;
       list-style: none; }
-      #list-item-component .center .media .gallery li img, #list-item-detailed-component .center .media .gallery li img, #review-item-component .center .media .gallery li img, #review-item-detailed-component .center .media .gallery li img {
+      .component-defaults .center .media .gallery li img {
         max-width: 100%;
         max-height: 100%; }
-    #list-item-component .center .metadata h3, #list-item-detailed-component .center .metadata h3, #review-item-component .center .metadata h3, #review-item-detailed-component .center .metadata h3 {
+    .component-defaults .center .metadata h3 {
       display: inline; }
-    #list-item-component .center .from, #list-item-detailed-component .center .from, #review-item-component .center .from, #review-item-detailed-component .center .from {
+    .component-defaults .center .from {
       font-size: 12px;
       font-style: italic; }
 
