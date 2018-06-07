@@ -8,11 +8,30 @@
     <div class="wrapper">
         @component('components/list-item-detailed-comp', ["value" => $listing, "media" => $media])
         @endcomponent
-        @component('components/send-message-comp', [
-            "type" => "dealer",
-            "listing_item_data" => $listing,
-            "errors" => $errors
-        ])
-        @endcomponent
+        <div class="tab-container component-defaults page-wrap center-content-margin">
+            <input id="tab-1" type="radio" name="tab" checked value="">
+            <input id="tab-2" type="radio" name="tab" value="">
+
+            <label for="tab-1">Message Seller</label><label for="tab-2">Write Review</label>
+
+            <div class="tab-view tab-view-1">
+                @component('components/send-message-comp', [
+                    "type" => "dealer_message",
+                    "listing_item_data" => $listing,
+                    "errors" => $errors,
+                    "success" => $success,
+                ])
+                @endcomponent
+            </div>
+            <div class="tab-view tab-view-2">
+                @component('components/send-message-comp', [
+                    "type" => "item_review",
+                    "listing_item_data" => $listing,
+                    "errors" => $errors,
+                    "success" => $success,
+                ])
+                @endcomponent
+            </div>
+        </div>
     </div>
 @endsection

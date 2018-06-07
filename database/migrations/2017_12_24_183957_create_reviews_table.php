@@ -16,10 +16,12 @@ class CreateReviewsTable extends Migration
     Schema::create('reviews', function (Blueprint $table) {
       $table->increments('id');
       $table->bigInteger('seller_id');
-      $table->string('from');
+      $table->string('first_name');
+      $table->string('last_name');
+      $table->string('email');
       $table->string('title');
       $table->bigInteger('inventory_item_id');
-      $table->string('body');
+      $table->string('message_body');
       $table->timestamp("created_at")->useCurrent();
       $table->timestamp("updated_at")->default(DB::raw("CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP"));
     });

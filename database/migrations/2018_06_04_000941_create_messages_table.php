@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMessageTable extends Migration
+class CreateMessagesTable extends Migration
 {
   /**
   * Run the migrations.
@@ -15,6 +15,7 @@ class CreateMessageTable extends Migration
   {
     Schema::create('messages', function (Blueprint $table) {
       $table->increments('id');
+      $table->bigInteger('seller_id');
       $table->bigInteger('inventory_item_id');
       $table->string('first_name');
       $table->string('last_name');

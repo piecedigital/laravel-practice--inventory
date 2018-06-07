@@ -11,28 +11,26 @@
 |
 */
 
-include 'route-handlers.php';
+$stuff = include(app_path().'/../includes/route-handlers.php');
 
 Route::redirect('/home', "/", 301);
 
-Route::get('/', function (Request $request) {
-    // seller=darrell&make=&model=&price=&weight=&year=
-    return $helpers["getListings"]($request, 'home', false);
+Route::get('/', function (Request $request) use($helpers) {
+  return $helpers["getListings"]($request, 'home', false);
 });
 Route::view('/about', 'about');
 
-Route::get('/listings', function (Request $request) {
-    // seller=darrell&make=&model=&price=&weight=&year=
-    return $helpers["getListings"]($request, 'listings', true);
+Route::get('/listings', function (Request $request) use($helpers) {
+  return $helpers["getListings"]($request, 'listings', true);
 });
 
 Route::get('/listings/{id}', $handlers["getListItemHandler"]);
 Route::post("/listings/{id}", $handlers["postListItemHandler"]);
 
 Route::get('/reviews', function () {
-    return view('reviews', [
-        "reviews" => App\Review::get()
-    ]);
+  return view('reviews', [
+    "reviews" => App\Review::get()
+  ]);
 });
 
 Route::get('/reviews/{id}', $handlers["getReviewItemHandler"]);

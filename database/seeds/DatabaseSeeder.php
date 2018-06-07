@@ -95,19 +95,23 @@ class DatabaseSeeder extends Seeder
     for ($ind=1; $ind <= 5; $ind++) {
       DB::table('reviews')->insert([
         'seller_id' => 1,
-        'from' => "Dude Bro" . $ind,
+        'first_name' => "Dude",
+        'last_name' => "Bro" . $ind,
         'title' => "It's good",
+        'email' => "piecedigitalstudios@gmail.com",
         'inventory_item_id' => $ind,
-        'body' => "So, yeah... it's good"
+        'message_body' => "So, yeah... it's good"
       ]);
     }
     for ($ind=1; $ind <= 5; $ind++) {
       DB::table('reviews')->insert([
         'seller_id' => 2,
-        'from' => "Mr. Man" . $ind,
+        'first_name' => "Mr.",
+        'last_name' => "Man" . $ind,
         'title' => "Excellent quality",
+        'email' => "piecedigitalstudios@gmail.com",
         'inventory_item_id' => $ind+5,
-        'body' => "A well made, high quality item"
+        'message_body' => "A well made, high quality item"
       ]);
     }
   }

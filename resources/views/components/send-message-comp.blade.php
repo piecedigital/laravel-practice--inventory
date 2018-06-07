@@ -1,6 +1,10 @@
 <div id="send-message-component">
     <div class="title">
-        <h2>Message the seller about this item</h2>
+        @if ($type == "dealer_message")
+            <h2>Message The Seller About This Item</h2>
+        @elseif ($type == "item_review")
+            <h2>Write A Review</h2>
+        @endif
     </div>
     <div class="separator">
 
@@ -9,11 +13,7 @@
         <div class="row">
             <h3>Inventory Item:</h3>
             @if ($listing_item_data)
-                <select class="" name="inventory_item">
-                    <option value="{{ $listing_item_data->id }}">
-                        {{ $listing_item_data->make . " " . $listing_item_data->model . ", " . $listing_item_data->year }}
-                    </option>
-                </select>
+                <input type="hidden" name="inventory_item" value="{{ $listing_item_data->id }}">
             @elseif ($listings)
                 <select class="" name="inventory_item">
                     @foreach ($listings as $key => $listing_item_value)
@@ -45,6 +45,15 @@
               {{ (array_key_exists("e", $errors) ? $errors["e"] : "")}}
             </div>
         </div>
+        @if ($type == "item_review")
+            <div class="row">
+                <h3><span class="error-message">*</span> Review Title:</h3>
+                <input type="text" name="title" value="">
+                <div class="error-message">
+                    {{ (array_key_exists("t", $errors) ? $errors["t"] : "")}}
+                </div>
+            </div>
+        @endif
         <div class="row">
             <h3><span class="error-message">*</span> Message:</h3>
             <textarea name="message_body" rows="8" cols="80"></textarea>
@@ -52,9 +61,19 @@
               {{ (array_key_exists("mb", $errors) ? $errors["mb"] : "")}}
             </div>
         </div>
+        <input type="hidden" name="seller" value="{{$listing_item_data->seller_id}}">
+        <input type="hidden" name="submission_type" value="{{$type}}">
         <div class="row">
             <button type="submit" name="button">Send</button>
         </div>
+        <div class="error-message">
+          {{ (array_key_exists("database", $errors) ? "Fatal Error: ".$errors["database"] : "")}}
+        </div>
+        @if ($success)
+            <div class="success-message">
+              Sent
+            </div>
+        @endif
         {{ csrf_field() }}
     </form>
 </div>

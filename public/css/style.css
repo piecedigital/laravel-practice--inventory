@@ -71,6 +71,62 @@ nav .highlighter {
   font-size: 12px;
   color: red; }
 
+.tab-container {
+  display: block;
+  padding-top: 8px;
+  margin: 8px auto 0; }
+  .tab-container > input {
+    display: none; }
+  .tab-container > label {
+    display: inline-block;
+    position: relative;
+    top: 8px;
+    padding: 8px 8px 16px;
+    border-radius: 8px 8px 0 0;
+    background-color: white;
+    box-shadow: 0 0 0 2px black;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: .5; }
+    .tab-container > label:nth-of-type(1) {
+      margin-left: 8px; }
+  .tab-container .tab-view {
+    z-index: 2;
+    position: relative;
+    background-color: white; }
+  .tab-container .tab-view-1 {
+    display: none; }
+  .tab-container #tab-1:checked ~ label[for="tab-1"] {
+    z-index: 1;
+    top: 0px;
+    opacity: 1; }
+  .tab-container #tab-1:checked ~ .tab-view-1 {
+    display: block; }
+  .tab-container .tab-view-2 {
+    display: none; }
+  .tab-container #tab-2:checked ~ label[for="tab-2"] {
+    z-index: 1;
+    top: 0px;
+    opacity: 1; }
+  .tab-container #tab-2:checked ~ .tab-view-2 {
+    display: block; }
+  .tab-container .tab-view-3 {
+    display: none; }
+  .tab-container #tab-3:checked ~ label[for="tab-3"] {
+    z-index: 1;
+    top: 0px;
+    opacity: 1; }
+  .tab-container #tab-3:checked ~ .tab-view-3 {
+    display: block; }
+  .tab-container .tab-view-4 {
+    display: none; }
+  .tab-container #tab-4:checked ~ label[for="tab-4"] {
+    z-index: 1;
+    top: 0px;
+    opacity: 1; }
+  .tab-container #tab-4:checked ~ .tab-view-4 {
+    display: block; }
+
 /* search box */
 #search-wrapper {
   padding: 16px; }
@@ -111,13 +167,10 @@ nav .highlighter {
   padding: 4px; }
 
 .component-defaults {
-  display: inline-block;
   border-radius: 4px;
   box-shadow: 0 0 2px 1px black;
   word-break: break-all;
   color: black; }
-  .component-defaults#list-item-detailed-component, .component-defaults#review-item-detailed-component {
-    display: block; }
   .component-defaults .content {
     display: inline-block;
     width: 100%;
@@ -150,7 +203,6 @@ nav .highlighter {
 #send-message-component {
   display: block;
   max-width: 960px;
-  margin: 16px auto 0;
   padding: 16px;
   border-radius: 4px;
   box-shadow: 0 0 2px 1px black;
