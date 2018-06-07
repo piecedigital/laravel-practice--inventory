@@ -69,7 +69,7 @@
         <div class="error-message">
           {{ (array_key_exists("database", $errors) ? "Fatal Error: ".$errors["database"] : "")}}
         </div>
-        @if ($success)
+        @if ($success || (session()->has('success') && session()->get('success') == true))
             <div class="success-message">
               Sent
             </div>

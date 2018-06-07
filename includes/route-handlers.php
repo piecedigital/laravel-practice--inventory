@@ -98,14 +98,16 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
 
     }
 
-    return view('listings-item', [
-        "index" => $listing_id,
-        "listing" => App\Listing::where(["inventory.id" => $listing_id])->joinMissing()->get()->first(),
-        "media" => App\Media::where(["inventory_item_id" => $listing_id])->get(),
-        "errors" => $errMsg,
-        "success" => $noErrors
-        // "reviews" => App\Review::where(["inventory_item_id" => $listing_id])->first()
-    ]);
+    // redirect 303
+    return Redirect::back()->with(["success" => $noErrors]);
+    // return view('listings-item', [
+    //     "index" => $listing_id,
+    //     "listing" => App\Listing::where(["inventory.id" => $listing_id])->joinMissing()->get()->first(),
+    //     "media" => App\Media::where(["inventory_item_id" => $listing_id])->get(),
+    //     "errors" => $errMsg,
+    //     "success" => $noErrors
+    //     // "reviews" => App\Review::where(["inventory_item_id" => $listing_id])->first()
+    // ]);
 };
 
 $handlers["getReviewItemHandler"] = function ($inventory_id) {

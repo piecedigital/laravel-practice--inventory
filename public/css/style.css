@@ -71,6 +71,11 @@ nav .highlighter {
   font-size: 12px;
   color: red; }
 
+.success-message {
+  font-size: 12px;
+  font-weight: bold;
+  color: green; }
+
 .tab-container {
   display: block;
   padding-top: 8px;
