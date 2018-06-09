@@ -11,10 +11,7 @@
         @section("header")
           <nav>
             <div class="decoration">
-              <a class="@yield('page-home')" href="/">Home</a>
-              <a class="@yield('page-listings')" href="/listings">Listings</a>
-              <a class="@yield('page-reviews')" href="/reviews">Reviews</a>
-              <a class="@yield('page-about')" href="/about">About</a>
+              <a class="@yield('page-home')" href="/">Home</a><a class="@yield('page-listings')" href="/listings">Listings</a><a class="@yield('page-reviews')" href="/reviews">Reviews</a><a class="@yield('page-about')" href="/about">About</a>
             </div>
             <div class="highlighter"></div>
           </nav>

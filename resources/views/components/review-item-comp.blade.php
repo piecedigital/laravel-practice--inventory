@@ -10,7 +10,7 @@
             </div>
             <div class="center">
                 <div class="body">
-                    {{ $review->body }}
+                    {{ $review->message_body }}
                 </div>
             </div>
         </a>
