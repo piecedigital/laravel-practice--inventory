@@ -10,7 +10,7 @@
             </div>
             <div class="center">
                 <div class="body">
-                    {{ Str::limit($review->message_body, 20) }}
+                    {{ str_limit($review->message_body, $limit = 150, $end = '...') }}
                 </div>
             </div>
         </a>
