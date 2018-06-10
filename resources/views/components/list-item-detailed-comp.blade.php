@@ -25,8 +25,7 @@
             <div class="separator"></div>
             <div class="split-box">
                 <div class="split-content descriptions">
-                    Sizeable description of the product. Sizeable description of the product. Sizeable description of the product. Sizeable description of the product. Sizeable description of the product. Sizeable description of the product.
-                    {{-- {{ $value->description }} --}}
+                    {{ $value->description }}
                 </div>
                 <div class="splitter"></div>
                 <div class="split-content metadata">
