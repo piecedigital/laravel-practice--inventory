@@ -1,4 +1,4 @@
-<div id="send-message-component">
+<div id="send-message-component" class="component-defaults page-wrap center-content-margin">
     <div class="title">
         @if ($type == "dealer_message")
             <h2>Message The Seller About This Item</h2>
@@ -11,10 +11,10 @@
     </div>
     <form class="" action="{{parse_url(url()->current())["path"]}}" method="post">
         <div class="row">
-            <h3>Inventory Item:</h3>
             @if ($listing_item_data)
                 <input type="hidden" name="inventory_item" value="{{ $listing_item_data->id }}">
             @elseif ($listings)
+                <h3>Inventory Item:</h3>
                 <select class="" name="inventory_item">
                     @foreach ($listings as $key => $listing_item_value)
                         <option value="{{ $listing_item_value->id }}">

@@ -33,4 +33,6 @@ Route::get('/reviews', function () {
   ]);
 });
 
-Route::get('/reviews/{id}', $handlers["getReviewItemHandler"]);
+Route::get('/inventory-reviews/{iid}', $handlers["getInventoryReviewsHandler"]);
+
+Route::get('/inventory-reviews/review/{rid}', $handlers["getReviewItemHandler"]);

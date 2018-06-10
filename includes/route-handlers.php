@@ -110,16 +110,27 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
     // ]);
 };
 
-$handlers["getReviewItemHandler"] = function ($inventory_id) {
-    $review = App\Review::where(["inventory_item_id" => $inventory_id])->get()->first();
+$handlers["getInventoryReviewsHandler"] = function ($inventory_id) {
+    $reviews = App\Review::where(["inventory_item_id" => $inventory_id])->get();
+
+    return view('reviews', [
+        "index" => $inventory_id,
+        "reviews" => $reviews,
+        "listing_item_data" => App\Listing::where([
+            "id" => $inventory_id,
+            ])->get()->first()
+        ]);
+};
+$handlers["getReviewItemHandler"] = function ($review_id) {
+    $review = App\Review::where(["id" => $review_id])->get()->first();
 
     return view('reviews-item', [
-    "index" => $inventory_id,
-    "review" => $review,
-    "listing_item_data" => App\Listing::where([
-    "id" => $review->inventory_item_id,
-    ])->get()->first()
-    ]);
+        "index" => $review_id,
+        "review" => $review,
+        "listing_item_data" => App\Listing::where([
+            "id" => $review->inventory_item_id,
+            ])->get()->first()
+        ]);
 };
 
 $helpers["getListings"] = function(Request $request, string $page, bool $getList = false) {

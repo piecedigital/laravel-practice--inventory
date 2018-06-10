@@ -7,11 +7,21 @@
 @section("content")
   <div class="content-header">
     <div class="page-wrap center-content-margin center-content-text">
-      <h1>Welcome</h1>
+      <h1>Welcome to Larva!</h1>
     </div>
   </div>
   <div class="page-wrap center-content-margin">
-    <hr>
+    <div class="separator"></div>
+  </div>
+  <div class="page-wrap center-content-margin center-content-text">
+    <p>
+        Please enjoy our inventory of nothing at all!
+        <br><br>
+        Message our non-existant sellers and review our non-existant products!
+    </p>
+  </di
+  <div class="page-wrap center-content-margin">
+    <div class="separator"></div>
   </div>
   @component('components/search-comp', [
     "makeList" => $makeList,

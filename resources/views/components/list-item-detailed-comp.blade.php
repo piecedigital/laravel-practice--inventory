@@ -29,7 +29,7 @@
         </div>
         <div class="separator"></div>
         <div class="">
-            <a href="/reviews/{{ $value->id }}">See Reviews</a>
+            <a href="/inventory-reviews/{{ $value->id }}">See Reviews</a>
         </div>
     </div>
 </div>

@@ -10,10 +10,10 @@
     <header>
         @section("header")
           <nav>
-            <div class="decoration">
+              {{-- <div class="highlighter"></div> --}}
+            {{-- <div class="decoration"> --}}
               <a class="@yield('page-home')" href="/">Home</a><a class="@yield('page-listings')" href="/listings">Listings</a><a class="@yield('page-reviews')" href="/reviews">Reviews</a><a class="@yield('page-about')" href="/about">About</a>
-            </div>
-            <div class="highlighter"></div>
+            {{-- </div> --}}
           </nav>
         @show
     </header>
@@ -26,6 +26,6 @@
       @section("footer")
       @show
     </footer>
-    <script src="/js/main.js" type="text/javascript"></script>
+    {{-- <script src="/js/main.js" type="text/javascript"></script> --}}
   </body>
 </html>
