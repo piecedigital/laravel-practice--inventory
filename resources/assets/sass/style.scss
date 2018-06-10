@@ -244,6 +244,35 @@ nav a:not(:last-child) {
     justify-content: flex-start;
 }
 
+.split-box {
+    display: flex;
+
+    .split-content {
+        width: 50%;
+        &:nth-of-type(1n) {
+            padding-right: 8px;
+        }
+        &:nth-of-type(3n) {
+            padding-left: 8px;
+        }
+    }
+
+    .splitter {
+        width: 4px;
+        margin: 0;
+        background-color: $dark;
+        flex-shrink: 0;
+    }
+
+    .metadata {
+        display: flex;
+
+        .column {
+            width: 50%;
+        }
+    }
+}
+
 /* search box */
 #search-wrapper {
     padding: 16px;

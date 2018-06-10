@@ -178,6 +178,24 @@ nav a:not(:last-child) {
   flex-wrap: wrap;
   justify-content: flex-start; }
 
+.split-box {
+  display: flex; }
+  .split-box .split-content {
+    width: 50%; }
+    .split-box .split-content:nth-of-type(1n) {
+      padding-right: 8px; }
+    .split-box .split-content:nth-of-type(3n) {
+      padding-left: 8px; }
+  .split-box .splitter {
+    width: 4px;
+    margin: 0;
+    background-color: #004155;
+    flex-shrink: 0; }
+  .split-box .metadata {
+    display: flex; }
+    .split-box .metadata .column {
+      width: 50%; }
+
 /* search box */
 #search-wrapper {
   padding: 16px; }
