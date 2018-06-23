@@ -98,8 +98,14 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
 
     }
 
+    $sessionData = [
+        "success" => $noErrors
+    ];
+
+    if(!$noErrors) $sessionData["errors"] = $errMsg;
+
     // redirect 303
-    return Redirect::back()->with(["success" => $noErrors]);
+    return Redirect::back()->with();
     // return view('listings-item', [
     //     "index" => $listing_id,
     //     "listing" => App\Listing::where(["inventory.id" => $listing_id])->joinMissing()->get()->first(),

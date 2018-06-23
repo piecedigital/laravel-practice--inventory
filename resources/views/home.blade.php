@@ -9,7 +9,7 @@
     </div>
   </div>
   <div class="page-wrap center-content-margin">
-    <div class="separator"></div>
+    <div class="separator-2"></div>
   </div>
   <div class="page-wrap center-content-margin center-content-text">
     <p>
@@ -19,7 +19,7 @@
     </p>
   </di
   <div class="page-wrap center-content-margin">
-    <div class="separator"></div>
+    <div class="separator-2"></div>
   </div>
   @component('components/search-comp', [
     "makeList" => $makeList,

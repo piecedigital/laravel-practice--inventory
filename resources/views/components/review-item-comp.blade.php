@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <div id="review-item-component" class="component-defaults page-wrap center-content-margin">
+    <div id="review-item-component" class="">
         <a href="/inventory-reviews/review/{{ $review->id }}" class="content">
             <h3 class="title">
                 {{ $review->title }}

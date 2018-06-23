@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="page-wrap center-content-margin">
-      <div class="separator"></div>
+      <div class="separator-2"></div>
     </div>
     @component('components/review-item-detailed-comp', [
         "review" => $review,

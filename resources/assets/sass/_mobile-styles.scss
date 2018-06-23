@@ -7,14 +7,14 @@
         padding: 4px;
         width: 30px;
         height: 30px;
-        background-color: $dark;
+        background-color: $accent;
         border-radius: 4px;
 
         div {
             position: relative;
             width: 100%;
             height: 4px;
-            background-color: $light;
+            background-color: $offWhite;
         }
     }
 
@@ -74,11 +74,14 @@
         flex-direction: column;
         align-items: center;
 
+        .split-content {
+            width: 100%;
+        }
         .splitter {
             margin: 8px 0;
             width: 80%;
             height: 4px;
-            background-color: $dark;
+            background-color: $accent;
         }
     }
 }

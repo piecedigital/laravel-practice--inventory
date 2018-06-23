@@ -50,6 +50,9 @@
                 <h3><span class="error-message">*</span> Review Title:</h3>
                 <input type="text" name="title" value="">
                 <div class="error-message">
+                    @if (session()->has('t'))
+                        {{ session()->get('t') }}
+                    @endif
                     {{ (array_key_exists("t", $errors) ? $errors["t"] : "")}}
                 </div>
             </div>
@@ -58,13 +61,16 @@
             <h3><span class="error-message">*</span> Message:</h3>
             <textarea name="message_body" rows="8" cols="80"></textarea>
             <div class="error-message">
+                @if (session()->has('mb'))
+                    {{ session()->get('mb') }}
+                @endif
               {{ (array_key_exists("mb", $errors) ? $errors["mb"] : "")}}
             </div>
         </div>
         <input type="hidden" name="seller" value="{{$listing_item_data->seller_id}}">
         <input type="hidden" name="submission_type" value="{{$type}}">
         <div class="row">
-            <button type="submit" name="button">Send</button>
+            <button class="default-button" type="submit" name="button">Send</button>
         </div>
         <div class="error-message">
           {{ (array_key_exists("database", $errors) ? "Fatal Error: ".$errors["database"] : "")}}

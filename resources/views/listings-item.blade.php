@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="page-wrap center-content-margin">
-      <div class="separator"></div>
+      <div class="separator-2"></div>
     </div>
     <div class="wrapper">
         @component('components/list-item-detailed-comp', ["value" => $listing, "media" => $media])

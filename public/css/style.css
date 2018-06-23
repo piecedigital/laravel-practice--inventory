@@ -4,7 +4,11 @@
 ul, li, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-  list-style: none; }
+  list-style: none;
+  font-weight: normal; }
+
+a {
+  color: #E4F9FF; }
 
 html {
   font-family: sans-serif;
@@ -12,14 +16,25 @@ html {
 
 body {
   margin: 0;
-  padding-top: 38px; }
+  padding-top: 38px;
+  background-color: #E4F9FF; }
 
 .separator {
   height: 4px;
   margin: 8px;
-  background-color: #004155; }
+  background-color: #B9EFFF; }
 
 .separator-small {
+  height: 2px;
+  margin: 8px 4px;
+  background-color: #B9EFFF; }
+
+.separator-2 {
+  height: 4px;
+  margin: 8px;
+  background-color: #004155; }
+
+.separator-2-small {
   height: 2px;
   margin: 8px 4px;
   background-color: #004155; }
@@ -34,8 +49,9 @@ header {
   left: 0;
   width: 100%;
   padding: 8px;
-  background-color: #B9EFFF;
-  border-bottom: 4px solid #004155; }
+  background-color: #004155;
+  color: #E4F9FF;
+  border-bottom: 4px solid #B9EFFF; }
 
 #mobile-menu {
   display: none; }
@@ -46,22 +62,23 @@ nav {
     padding: 4px;
     text-decoration: none;
     transition: .1s all;
-    box-shadow: inset 0 0px 0 0 #004155; }
+    box-shadow: inset 0 0px 0 0 #B9EFFF;
+    color: #E4F9FF; }
     nav a.set {
-      box-shadow: inset 0 -2px 0 0 #004155; }
+      box-shadow: inset 0 -2px 0 0 #B9EFFF; }
     nav a:not(:last-child) {
       position: relative;
       margin-right: 8px; }
       nav a:not(:last-child):hover {
-        color: #E4F9FF;
-        box-shadow: inset 0 -32px 0 0 #004155; }
+        color: #004155;
+        box-shadow: inset 0 -32px 0 0 #B9EFFF; }
 
 .default-button {
   padding: 4px;
   border-radius: 4px;
-  background-color: #004155;
+  background-color: #B9EFFF;
   border: none;
-  color: #E4F9FF;
+  color: #004155;
   cursor: pointer; }
 
 .wrapper {
@@ -93,14 +110,15 @@ nav {
 
 .component-defaults {
   border-radius: 10px;
-  background-color: #B9EFFF;
+  background-color: #004155;
+  color: #E4F9FF;
   word-break: break-all;
-  border-bottom: 4px solid #004155; }
+  border-bottom: 4px solid #B9EFFF; }
   .component-defaults .content {
     display: inline-block;
     width: 100%;
     text-decoration: none;
-    color: #004155; }
+    color: #B9EFFF; }
     .component-defaults .content:hover img {
       opacity: .8; }
   .component-defaults .title {
@@ -136,7 +154,8 @@ nav {
     top: 8px;
     padding: 8px 8px 16px;
     border-radius: 8px 8px 0 0;
-    background-color: #B9EFFF;
+    background-color: #004155;
+    color: #E4F9FF;
     box-shadow: 0 0 0 2px black;
     font-weight: bold;
     cursor: pointer;
@@ -196,7 +215,7 @@ nav {
   .split-box .splitter {
     width: 4px;
     margin: 0;
-    background-color: #004155;
+    background-color: #B9EFFF;
     flex-shrink: 0; }
   .split-box .metadata {
     display: flex; }
@@ -242,17 +261,18 @@ nav {
   width: 25%;
   padding: 4px; }
   .listing-item .wrapper, .review-item .wrapper {
+    height: 100%;
     transition: .1s all;
-    box-shadow: 0 0 0 2px #004155;
+    box-shadow: 0 0 0 2px #B9EFFF;
     border-radius: 5px;
-    background-color: #B9EFFF; }
+    background-color: #004155; }
   .listing-item:hover .wrapper, .review-item:hover .wrapper {
     transform: scale(1.1);
-    box-shadow: 0 0 0 4px #004155; }
+    box-shadow: 0 0 0 4px #B9EFFF; }
 
 #send-message-component {
   padding: 16px;
-  box-shadow: 0 -4px 0 0 #004155; }
+  box-shadow: 0 -4px 0 0 #B9EFFF; }
   #send-message-component form {
     padding: 16px; }
   #send-message-component .row:not(:nth-of-type(1n-1)) {
@@ -269,13 +289,13 @@ nav {
     padding: 4px;
     width: 30px;
     height: 30px;
-    background-color: #004155;
+    background-color: #B9EFFF;
     border-radius: 4px; }
     .mobile-menu div {
       position: relative;
       width: 100%;
       height: 4px;
-      background-color: #B9EFFF; }
+      background-color: #E4F9FF; }
 
   nav {
     display: none; }
@@ -308,11 +328,13 @@ nav {
   .split-box {
     flex-direction: column;
     align-items: center; }
+    .split-box .split-content {
+      width: 100%; }
     .split-box .splitter {
       margin: 8px 0;
       width: 80%;
       height: 4px;
-      background-color: #004155; } }
+      background-color: #B9EFFF; } }
 @media screen and (max-width: 400px) {
   #search-wrapper {
     padding: 16px 0; }
