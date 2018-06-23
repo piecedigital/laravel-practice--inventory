@@ -92,6 +92,9 @@
 
     #listings-wrapper, .component-defaults, .wrapper {
         padding: 8px 0;
+        &.tab-container {
+            padding-bottom: 0;
+        }
     }
 
     .listing-item, .review-item {
