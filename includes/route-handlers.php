@@ -94,6 +94,9 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
                 $errMsg["database"] = "There an internal error while submitting your form";
                 $noErrors = false;
             }
+        } else {
+            $errMsg["database"] = "There an internal error while submitting your form";
+            $noErrors = false;
         }
 
     }
@@ -105,7 +108,7 @@ $handlers["postListItemHandler"] = function(Request $request, $listing_id) {
     if(!$noErrors) $sessionData["errors"] = $errMsg;
 
     // redirect 303
-    return Redirect::back()->with();
+    return Redirect::back()->with($sessionData);
     // return view('listings-item', [
     //     "index" => $listing_id,
     //     "listing" => App\Listing::where(["inventory.id" => $listing_id])->joinMissing()->get()->first(),
