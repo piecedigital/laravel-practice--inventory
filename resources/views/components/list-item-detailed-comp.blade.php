@@ -42,8 +42,8 @@
                 </div>
             </div>
             <div class="separator"></div>
-            <div class="">
-                <a href="/inventory-reviews/{{ $value->id }}">See Reviews</a>
+            <div>
+                <a class="default-button" href="/inventory-reviews/{{ $value->id }}">See Reviews</a>
             </div>
         </div>
     </div>

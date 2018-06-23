@@ -1,0 +1,97 @@
+@media screen and (max-width: 670px) {
+    .mobile-menu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 4px;
+        width: 30px;
+        height: 30px;
+        background-color: $dark;
+        border-radius: 4px;
+
+        div {
+            position: relative;
+            width: 100%;
+            height: 4px;
+            background-color: $light;
+        }
+    }
+
+    nav {
+        display: none;
+    }
+
+    #mobile-menu {
+        &:checked {
+            & ~ header {
+                .mobile-menu {
+                    div {
+                        position: absolute;
+                        top: 4px;
+                        left: 4px;
+                        width: 22px;
+                    }
+                }
+
+                nav {
+                    display: block;
+                    padding-top: 16px;
+
+                    a {
+                        display: block;
+                        margin: 0 8px;
+                        padding: 8px;
+                        text-align: center;
+
+                        &.set {
+                        }
+                        &:not(:last-child) {
+                            &:hover {
+                            }
+                        }
+                    }
+                }
+            }
+
+            & ~ .dim-backdrop {
+                z-index: 4;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(black, .5);
+            }
+        }
+    }
+
+    .listing-item, .review-item {
+        width: 50%;
+    }
+
+    .split-box {
+        flex-direction: column;
+        align-items: center;
+
+        .splitter {
+            margin: 8px 0;
+            width: 80%;
+            height: 4px;
+            background-color: $dark;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    #search-wrapper {
+        padding: 16px 0;
+    }
+
+    #listings-wrapper, .component-defaults, .wrapper {
+        padding: 8px 0;
+    }
+
+    .listing-item, .review-item {
+        width: 100%;
+    }
+}

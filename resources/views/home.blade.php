@@ -1,7 +1,5 @@
 @extends("templates.layout")
 
-@section("title", "all about larva")
-
 @section("page-home", "set")
 
 @section("content")

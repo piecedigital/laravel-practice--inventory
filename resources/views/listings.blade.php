@@ -1,6 +1,6 @@
 @extends("templates.layout")
 
-@section("title", "Listings")
+@section("title", "Larva Listings")
 
 @section("page-listings", "set")
 

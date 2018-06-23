@@ -1,6 +1,7 @@
 @extends("templates.layout")
 
-@section("title", "all about larva")
+@section("title", $listing->make . " " . $listing->model . ", " . $listing->year)
+@section("description", $listing->description)
 
 @section("page-listings", "set")
 

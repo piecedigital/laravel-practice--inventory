@@ -19,6 +19,7 @@ html {
 
 body {
     margin: 0;
+    padding-top: 34+4px;
 }
 
 .separator {
@@ -38,35 +39,47 @@ body {
 }
 
 header {
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 8px;
     background-color: $light;
+    border-bottom: 4px solid $dark;
+}
+
+#mobile-menu {
+    display: none;
 }
 
 nav {
     position: relative;
-}
-nav .decoration {
-    display: inline-block;
-    padding: 3px 2px;
-    box-shadow: 0 -2px 0 0 white,
-    0 2px 0 0 white;
-}
-nav a {
-    padding: 4px;
-    text-decoration: none;
-    transition: .1s all;
-    box-shadow: inset 0 -0px 0 0 $dark;
 
-    &.set {
-        box-shadow: inset 0 -2px 0 0 $dark;
-    }
-}
-nav a:not(:last-child) {
-    position: relative;
-    margin-right: 8px;
-    &:hover {
-        color: $offWhite;
-        box-shadow: inset 0 -32px 0 0 $dark;
+    // .decoration {
+    //     display: inline-block;
+    //     padding: 3px 2px;
+    //     box-shadow: 0 -2px 0 0 white,
+    //     0 2px 0 0 white;
+    // }
+
+    a {
+        padding: 4px;
+        text-decoration: none;
+        transition: .1s all;
+        box-shadow: inset 0 -0px 0 0 $dark;
+
+        &.set {
+            box-shadow: inset 0 -2px 0 0 $dark;
+        }
+        &:not(:last-child) {
+            position: relative;
+            margin-right: 8px;
+            &:hover {
+                color: $offWhite;
+                box-shadow: inset 0 -32px 0 0 $dark;
+            }
+        }
     }
 }
 // nav .highlighter {
@@ -80,6 +93,8 @@ nav a:not(:last-child) {
 // }
 
 .default-button {
+    padding: 4px;
+    border-radius: 4px;
     background-color: $dark;
     border: none;
     color: $offWhite;
@@ -87,7 +102,7 @@ nav a:not(:last-child) {
 }
 
 .wrapper {
-    padding: 16px;
+    padding: 8px;
 }
 
 .page-wrap {
@@ -121,55 +136,6 @@ nav a:not(:last-child) {
     margin-top: 16px;
 }
 
-.tab-container {
-    display: block;
-    padding-top: 8px;
-    margin: 8px auto 0;
-
-    > input {
-        display: none;
-    }
-    > label {
-        display: inline-block;
-        position: relative;
-        top: 8px;
-        padding: 8px 8px 16px;
-        border-radius: 8px 8px 0 0;
-        background-color: $light;
-        box-shadow: 0 0 0 2px black;
-        font-weight: bold;
-        cursor: pointer;
-        opacity: .5;
-
-        &:nth-of-type(1) {
-            margin-left: 8px;
-        }
-    }
-
-    .tab-view {
-        z-index: 2;
-        position: relative;
-        background-color: white;
-    }
-
-    @for $i from 1 through 4 {
-        .tab-view-#{$i} {
-            display: none;
-        }
-
-        #tab-#{$i}:checked {
-            & ~ label[for="tab-#{$i}"] {
-                z-index: 1;
-                top: 0px;
-                opacity: 1;
-            }
-            & ~ .tab-view-#{$i} {
-                display: block;
-            }
-        }
-    }
-}
-
 .component-defaults {
     &#list-item-detailed-component, &#review-item-detailed-component {
         // display: block;
@@ -182,6 +148,7 @@ nav a:not(:last-child) {
     background-color: $light;
     // color: black;
     word-break: break-all;
+    border-bottom: 4px solid $dark;
 
     .content {
         display: inline-block;
@@ -238,6 +205,56 @@ nav a:not(:last-child) {
     }
 }
 
+.tab-container {
+    display: block;
+    padding-top: 8px;
+    margin: 8px auto 0;
+    border: none !important;
+
+    > input {
+        display: none;
+    }
+    > label {
+        display: inline-block;
+        position: relative;
+        top: 8px;
+        padding: 8px 8px 16px;
+        border-radius: 8px 8px 0 0;
+        background-color: $light;
+        box-shadow: 0 0 0 2px black;
+        font-weight: bold;
+        cursor: pointer;
+        opacity: .5;
+
+        &:nth-of-type(1) {
+            margin-left: 8px;
+        }
+    }
+
+    .tab-view {
+        z-index: 2;
+        position: relative;
+        background-color: white;
+    }
+
+    @for $i from 1 through 4 {
+        .tab-view-#{$i} {
+            display: none;
+        }
+
+        #tab-#{$i}:checked {
+            & ~ label[for="tab-#{$i}"] {
+                z-index: 1;
+                top: 0px;
+                opacity: 1;
+            }
+            & ~ .tab-view-#{$i} {
+                display: block;
+            }
+        }
+    }
+}
+
 .listing-defaults {
     display: flex;
     flex-wrap: wrap;
@@ -275,7 +292,7 @@ nav a:not(:last-child) {
 
 /* search box */
 #search-wrapper {
-    padding: 16px;
+    padding: 8px;
 }
 #listing-search-component {
     max-width: 500px;
@@ -363,3 +380,5 @@ nav a:not(:last-child) {
         width: 100%;
     }
 }
+
+@import "_mobile-styles";
